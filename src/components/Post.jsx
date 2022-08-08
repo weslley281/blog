@@ -35,6 +35,16 @@ export function Post() {
           <a href="https://www.lipsum.com/">Lorem Ipsum</a>.{' '}
         </p>
       </div>
+
+      <form className={styles.comentForm}>
+        <strong>Deixe seu comentário</strong>
+
+        <textarea placeholder="Deixe um comentário" />
+
+        <footer>
+          <button type="submit">Comentar</button>
+        </footer>
+      </form>
     </article>
   );
 }
