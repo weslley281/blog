@@ -1,13 +1,13 @@
 import { useState } from 'react';
 import { Header } from './components/Header';
-import { Post } from './Post';
+import { Post } from './components/Post';
 
 import './global.css';
 import styles from './App.module.css';
 import { Siderbar } from './components/Siderbar';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
 
   return (
     <div>
@@ -29,7 +29,7 @@ function App() {
         </main>
       </div>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
