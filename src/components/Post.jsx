@@ -51,7 +51,7 @@ export function Post({ author, content, publishedAt }) {
         })}
       </div>
 
-      <form onSubimit={handleCreateNewComment} className={styles.comentForm}>
+      <form onSubmit={handleCreateNewComment} className={styles.comentForm}>
         <strong>Deixe seu comentário</strong>
 
         <textarea placeholder="Deixe um comentário" />
