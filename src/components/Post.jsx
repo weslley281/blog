@@ -1,8 +1,11 @@
+import { useState } from 'react';
 import { Avatar } from './Avatar';
 import { Comment } from './Comment';
 import styles from './Post.module.css';
 
 export function Post({ author, content, publishedAt }) {
+  const [coments, setComents] = useState([1, 2, 3]);
+
   const publishedDateFormatted = new Intl.DateTimeFormat('pt-BR', {
     day: '2-digit',
     month: 'long',
@@ -11,6 +14,11 @@ export function Post({ author, content, publishedAt }) {
     year: 'numeric',
     second: '2-digit',
   }).format(publishedAt);
+
+  function handleCreateNewComment() {
+    event.preventDefault();
+    setComents([...coments, coments.length + 1]);
+  }
 
   return (
     <article className={styles.post}>
@@ -43,7 +51,7 @@ export function Post({ author, content, publishedAt }) {
         })}
       </div>
 
-      <form className={styles.comentForm}>
+      <form onSubimit={handleCreateNewComment} className={styles.comentForm}>
         <strong>Deixe seu comentário</strong>
 
         <textarea placeholder="Deixe um comentário" />
@@ -54,8 +62,9 @@ export function Post({ author, content, publishedAt }) {
       </form>
 
       <div className={styles.commentList}>
-        <Comment />
-        <Comment />
+        {coments.map((coment) => {
+          return <Comment />;
+        })}
       </div>
     </article>
   );
