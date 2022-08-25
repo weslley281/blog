@@ -1,26 +1,26 @@
-.coment {
+.comment {
   margin-top: 1.5rem;
   display: flex;
   gap: 1rem;
 }
 
-.coment > img {
+.comment > img {
   width: 3rem;
   height: 3rem;
   border-radius: 8px;
 }
 
-.comentBox {
+.commentBox {
   flex: 1;
 }
 
-.comentContent {
+.commentContent {
   background-color: var(--gray-700);
   border-radius: 8px;
   padding: 1rem;
 }
 
-.comentContent header {
+.commentContent header {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
@@ -42,7 +42,7 @@
   color: var(--gray-400);
 }
 
-.comentContent header button {
+.commentContent header button {
   background-color: transparent;
   border: 0;
   color: var(--gray-400);
@@ -51,20 +51,20 @@
   border-radius: 2px;
 }
 
-.coment header button:hover {
+.comment header button:hover {
   color: var(--red-500);
 }
 
-.comentContent p {
+.commentContent p {
   margin-top: 1rem;
   color: var(--gray-300);
 }
 
-.comentBox footer {
+.commentBox footer {
   margin-top: 1rem;
 }
 
-.comentBox footer button {
+.commentBox footer button {
   background-color: transparent;
   border: 0;
   color: var(--gray-400);
@@ -76,16 +76,16 @@
   border-radius: 2px;
 }
 
-.comentBox footer button:hover {
+.commentBox footer button:hover {
   color: var(--green-300);
   cursor: pointer;
 }
 
-.comentBox footer button svg {
+.commentBox footer button svg {
   margin-right: 0.5rem;
 }
 
-.comentBox footer button span::before {
+.commentBox footer button span::before {
   content: '\2022';
   padding: 0 0.25rem;
 }
