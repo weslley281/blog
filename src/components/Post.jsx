@@ -25,6 +25,7 @@ export function Post({ author, content, publishedAt }) {
   }
 
   function handleNewCommentChange() {
+    event.target.setCustomValidity('');
     setnewCommetText(event.target.value);
   }
 
@@ -34,6 +35,12 @@ export function Post({ author, content, publishedAt }) {
     });
     setComments(commentsWithoutDeleteOne);
   }
+
+  function handleNewCommentInvalid() {
+    event.target.setCustomValidity('Esse campo deve ser preenchido');
+  }
+
+  const isNewCommentEmpty = newCommetText.length === 0;
 
   return (
     <article className={styles.post}>
@@ -73,11 +80,15 @@ export function Post({ author, content, publishedAt }) {
           name="comment"
           placeholder="Deixe um comentário"
           onChange={handleNewCommentChange}
+          onInvalid={handleNewCommentInvalid}
           value={newCommetText}
+          required
         />
 
         <footer>
-          <button type="submit">Comentar</button>
+          <button type="submit" disabled={isNewCommentEmpty}>
+            Comentar
+          </button>
         </footer>
       </form>
 
