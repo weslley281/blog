@@ -4,10 +4,16 @@ import { Avatar } from './Avatar';
 import styles from './Comment.module.css';
 
 export function Comment({ content, onDeleteComment }) {
-const [likeCount, setLikeCount] = useState()
+  const [likeCount, setLikeCount] = useState(0);
 
   function handleDeleteComment() {
-    onDeleteComment(content);
+    onDeleteComment((state) => {
+      return state + 1;
+    });
+  }
+
+  function handleLikeComment() {
+    setLikeCount(likeCount + 1);
   }
 
   return (
@@ -36,8 +42,8 @@ const [likeCount, setLikeCount] = useState()
         </div>
 
         <footer>
-          <button>
-            <ThumbsUp /> Curtir <span>20</span>
+          <button onClick={handleLikeComment}>
+            <ThumbsUp /> Curtir <span>{likeCount}</span>
           </button>
         </footer>
       </div>
